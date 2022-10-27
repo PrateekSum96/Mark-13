@@ -22,7 +22,7 @@ function convertDateToStr(date) {
     dateStr.month = date.month.toString();
   }
 
-  dateStr.year = date.day.toString();
+  dateStr.year = date.year.toString();
   return dateStr;
 }
 function getDateInAllFormats(date) {
@@ -37,9 +37,21 @@ function getDateInAllFormats(date) {
   return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
 }
 
+function checkPalindromeForAllDateFormats(date) {
+  var listOfPalindrome = getDateInAllFormats(date);
+  var flag = false;
+  for (var i = 0; i < listOfPalindrome.length; i++) {
+    if (isPalindrome(listOfPalindrome[i])) {
+      flag = true;
+      break;
+    }
+  }
+  return flag;
+}
+
 var date = {
-  day: 5,
-  month: 10,
-  year: 2022,
+  day: 22,
+  month: 11,
+  year: 22,
 };
-console.log(getDateInAllFormats(date));
+console.log(checkPalindromeForAllDateFormats(date));
