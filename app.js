@@ -39,19 +39,34 @@ function getDateInAllFormats(date) {
 
 function checkPalindromeForAllDateFormats(date) {
   var listOfPalindrome = getDateInAllFormats(date);
-  var flag = false;
+  var msg = "";
   for (var i = 0; i < listOfPalindrome.length; i++) {
     if (isPalindrome(listOfPalindrome[i])) {
-      flag = true;
+      msg = "Yey!! Your birthday is Palindrome🥳🥳.";
       break;
+    } else {
+      msg = "Nooooo!! Your birthday is not Palindrome😒😒.";
     }
   }
-  return flag;
+  return msg;
 }
 
-var date = {
-  day: 22,
-  month: 11,
-  year: 22,
-};
-console.log(checkPalindromeForAllDateFormats(date));
+var dateInputRef = document.querySelector("#birthday-input");
+var showDateRef = document.querySelector("#show-btn");
+var resultRef = document.querySelector("#result");
+
+function clickHandler() {
+  var bdayStr = dateInputRef.value;
+
+  if (bdayStr !== "") {
+    var listOfDate = bdayStr.split("-");
+    var date = {
+      day: Number(listOfDate[2]),
+      month: Number(listOfDate[1]),
+      year: Number(listOfDate[0]),
+    };
+    var checkPalindrome = checkPalindromeForAllDateFormats(date);
+    resultRef.innerText = checkPalindrome;
+  }
+}
+showDateRef.addEventListener("click", clickHandler);

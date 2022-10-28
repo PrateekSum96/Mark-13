@@ -1,0 +1,35 @@
+:root {
+  --primary-color: rgba(13, 63, 4, 0.979);
+  --primary-text: rgb(243, 208, 7);
+}
+body {
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  padding: 0.5rem;
+}
+main {
+  text-align: center;
+  font-size: 1.5rem;
+}
+input {
+  border-radius: 1rem;
+  padding: 0.3rem;
+  border-color: var(--primary-text);
+}
+#show-btn {
+  padding: 0.5rem;
+  color: var(--primary-text);
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: var(--primary-text);
+  border-radius: 1rem;
+}
