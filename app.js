@@ -67,6 +67,8 @@ function clickHandler() {
     };
     var checkPalindrome = checkPalindromeForAllDateFormats(date);
     resultRef.innerText = checkPalindrome;
+  } else {
+    resultRef.innerText = "Please enter the date!!!";
   }
 }
 showDateRef.addEventListener("click", clickHandler);
